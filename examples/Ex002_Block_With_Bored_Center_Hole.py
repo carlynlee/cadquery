@@ -22,4 +22,4 @@ result = (
 )
 
 # Displays the result of this script
-show_object(result)
+show_object(result)deactivate
