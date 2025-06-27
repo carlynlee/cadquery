@@ -69,6 +69,38 @@ solar_array_params = {
 
 Change any of these values and re-run the script to see your new design.
 
+
+
+## Performance Profiling
+
+Understanding the performance of your script is crucial for optimization. You can use Python's built-in `cProfile` module combined with `snakeviz` to get a visual and interactive breakdown of where your script spends its time. This is especially useful for identifying bottlenecks in complex CAD generation scripts.
+
+### How to Profile with `snakeviz`
+
+1.  **Install `snakeviz`:** If you don't have it installed, you can add it to your environment with pip:
+
+    ```bash
+    pip install snakeviz
+    ```
+
+2.  **Generate a Profile File:** Run your script using Python's `cProfile` module and save the statistics to an output file (e.g., `spacecraft.prof`).
+
+    ```bash
+    python -m cProfile -o spacecraft.prof my_model.py
+    ```
+
+3.  **Visualize the Profile:** Launch `snakeviz` with the profile file.
+
+    ```bash
+    snakeviz spacecraft.prof
+    ```
+
+This will open a new tab in your web browser with an interactive sunburst chart. The chart shows the call stack, with wider segments indicating functions that took more time to execute. You can click on segments to zoom in and analyze specific parts of your code.
+
+!Example of snakeviz output
+
+
+
 ## Project Structure
 
 A brief overview of the project's file structure:
